@@ -35,12 +35,15 @@
     border-radius: 4px;
     padding-left: 42px;
     transition: border-color var(--translate-options);
+
+    &:focus {
+        border-color: var(--accent-color);
+        outline: none;
+        }
+
 }
 
-.modal-input:focus {
-    border-color: var(--accent-color);
-    outline: none;
-}
+
 
 .modal-input-wrapper {
     position: relative;
@@ -52,10 +55,10 @@
     left: 12px;
     transform: translateY(-50%);
     transition: fill var(--translate-options);
-}
 
-.modal-input:focus+.modal-input-icon {
+    .modal-input:focus+& {
     fill: var(--accent-color);
+    }
 }
 
 .modal-message {
@@ -71,15 +74,15 @@
     border-radius: 4px;
     resize: none;
     transition: border-color var(--translate-options);
-}
 
-.modal-message-form:focus {
-    border-color: var(--accent-color);
-    outline: none;
-}
+    &:focus {
+        border-color: var(--accent-color);
+        outline: none;
+        }
 
-.modal-message-form::placeholder {
-    color: var(--modal-placeholder-color);
+    &::placeholder {
+        color: var(--modal-placeholder-color);
+        }
 }
 
 .modal-check {
@@ -90,11 +93,13 @@
 
     color: var(--secondary-text-color);
     line-height: 1.72;
+
+    a {
+        color: var(--accent-color);
+    }
 }
 
-.modal-check a {
-    color: var(--accent-color);
-}
+
 
 .modal-check-icon {
     border: solid 2px var(--checkbox-border-color);
@@ -103,26 +108,30 @@
     margin-right: 7px;
     cursor: pointer;
     transition: background-color var(--translate-options),
-        box-shadow var(--translate-options);
+    box-shadow var(--translate-options);
+
+        .modal-check-input:focus+& {
+            box-shadow: 0 0 0 2px var(--accent-color);
+            }
+        
+        .modal-check-input:checked+& {
+            border: none;
+            background-color: var(--accent-color);
+            box-shadow: none;
+            }
 }
 
 .modal-icon-check-mark {
     display: none;
+
+    .modal-check-input:checked+.modal-check-icon & {
+        display: block;
+        }
 }
 
-.modal-check-input:focus+.modal-check-icon {
-    box-shadow: 0 0 0 2px var(--accent-color);
-}
 
-.modal-check-input:checked+.modal-check-icon {
-    border: none;
-    background-color: var(--accent-color);
-    box-shadow: none;
-}
 
-.modal-check-input:checked+.modal-check-icon .modal-icon-check-mark {
-    display: block;
-}
+
 
 .modal-submit-btn {
     padding: 10px 55px;

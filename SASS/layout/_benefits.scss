@@ -5,6 +5,10 @@
 
 .benefits__item {
     width: 270px;
+
+    &:not(:last-child) {
+        margin-right: 30px;
+        }
 }
 
 .benefits__wrapper {
@@ -16,10 +20,6 @@
     height: 120px;
     background-color: #f5f4fa;
     border-radius: 4px;
-}
-
-.benefits__item:not(:last-child) {
-    margin-right: 30px;
 }
 
 .benefits__title {

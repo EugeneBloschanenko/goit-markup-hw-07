@@ -24,9 +24,10 @@
     border-radius: 50%;
     cursor: pointer;
     padding: 0;
+
+    &:focus,
+    &:hover {
+        fill: var(--accent-color);
+        }
 }
 
-.modal-close-btn:focus,
-.modal-close-btn:hover {
-    fill: var(--accent-color);
-}
